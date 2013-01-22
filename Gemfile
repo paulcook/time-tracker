@@ -29,7 +29,7 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
-
+gem 'carmen-rails', '~> 1.0.0.beta3'
 gem 'bootstrap-generators', '~> 2.1'
 
 group :test, :development do

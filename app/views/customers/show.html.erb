@@ -1,0 +1,53 @@
+<div class="page-header">
+  <%= link_to customers_path, :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    Back
+  <% end %>
+  <%= link_to edit_customer_path(@customer), :class => 'btn btn-primary' do %>
+    <i class="icon-pencil icon-white"></i>
+    Edit
+  <% end %>
+  <h1>Listing customers</h1>
+</div>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @customer.name %></dd>
+
+  <dt>Address1:</dt>
+  <dd><%= @customer.address1 %></dd>
+
+  <dt>Address2:</dt>
+  <dd><%= @customer.address2 %></dd>
+
+  <dt>Address3:</dt>
+  <dd><%= @customer.address3 %></dd>
+
+  <dt>City:</dt>
+  <dd><%= @customer.city %></dd>
+
+  <dt>State:</dt>
+  <dd><%= @customer.state %></dd>
+
+  <dt>Zipcode:</dt>
+  <dd><%= @customer.zipcode %></dd>
+
+  <dt>Phone1:</dt>
+  <dd><%= @customer.phone1 %></dd>
+
+  <dt>Phone2:</dt>
+  <dd><%= @customer.phone2 %></dd>
+
+  <dt>Fax1:</dt>
+  <dd><%= @customer.fax1 %></dd>
+
+  <dt>Fax2:</dt>
+  <dd><%= @customer.fax2 %></dd>
+
+  <dt>Email:</dt>
+  <dd><%= @customer.email %></dd>
+
+  <dt>Website:</dt>
+  <dd><%= @customer.website %></dd>
+
+</dl>
