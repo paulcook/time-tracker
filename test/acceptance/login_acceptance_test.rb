@@ -8,6 +8,7 @@ describe "User can login Acceptance Test" do
     visit "/"
     fill_in "Email", with: user.email
     fill_in "Password", with: "testpass"
+    click_button "Sign in"
     
     assert page.has_content? ("Logged in as #{user.name}")
   end

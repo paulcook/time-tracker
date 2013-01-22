@@ -11,6 +11,8 @@ require "minitest/rails"
 # Uncomment if you want awesome colorful output
 require "minitest/pride"
 
+require "factory_girl_rails"
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #fixtures :all
