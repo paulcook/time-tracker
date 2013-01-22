@@ -9,6 +9,13 @@ describe ProjectsController do
     
     sign_in @user
   end
+  
+  it "must get index without customer" do
+    FactoryGirl.create_list(:project,10)
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:projects)
+  end
 
   it "must get index" do
     get :index, customer_id: @customer.id

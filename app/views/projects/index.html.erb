@@ -1,7 +1,9 @@
 <div class="page-header">
+  <% if @customer and @customer.persisted? %>
   <%= link_to new_customer_project_path(@customer), :class => 'btn btn-primary' do %>
     <i class="icon-plus icon-white"></i>
     New Project
+  <% end %>
   <% end %>
   <h1>Listing projects</h1>
 </div>
@@ -22,9 +24,9 @@
     <tr>
       <td><%= project.customer %></td>
       <td><%= project.name %></td>
-      <td><%= link_to 'Show', [@customer,project] %></td>
-      <td><%= link_to 'Edit', edit_customer_project_path(@customer,project) %></td>
-      <td><%= link_to 'Destroy', [@customer,project], confirm: 'Are you sure?', method: :delete %></td>
+      <td><%= link_to 'Show', [project.customer,project] %></td>
+      <td><%= link_to 'Edit', edit_customer_project_path(project.customer,project) %></td>
+      <td><%= link_to 'Destroy', [project.customer,project], confirm: 'Are you sure?', method: :delete %></td>
     </tr>
 <% end %>
   </tbody>

@@ -56,5 +56,28 @@
   <div class="span6">
     <h2>Customer Projects</h2>
     <p><%= link_to "Add Project", new_customer_project_path(@customer), class: "btn" %></p>
+    
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          
+          <th>Name</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+    <% @customer.projects.each do |project| %>
+        <tr>
+          <td><%= project.name %></td>
+          <td><%= link_to 'Show', [project.customer,project] %></td>
+          <td><%= link_to 'Edit', edit_customer_project_path(project.customer,project) %></td>
+          <td><%= link_to 'Destroy', [project.customer,project], confirm: 'Are you sure?', method: :delete %></td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

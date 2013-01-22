@@ -1,0 +1,30 @@
+<%= form_for([@project,@task], :html => { :class => "form-horizontal" }) do |f| %>
+  <% if @task.errors.any? %>
+    <div class="alert alert-error">
+      <a class="close" data-dismiss="alert" href="#">×</a>
+      <h4 class="alert-heading"><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h4>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :project, :class => "control-label" %>
+    <div class="controls">
+      <%= @project %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :name, :class => "input-xlarge" %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+<% end %>

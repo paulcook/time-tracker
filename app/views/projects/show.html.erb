@@ -10,11 +10,40 @@
   <h1>Listing projects</h1>
 </div>
 
-<dl>
-  <dt>Customer:</dt>
-  <dd><%= @project.customer %></dd>
+<div class="row-fluid">
+  <div class="span4">
+    <dl>
+      <dt>Customer:</dt>
+      <dd><%= @project.customer %></dd>
 
-  <dt>Name:</dt>
-  <dd><%= @project.name %></dd>
+      <dt>Name:</dt>
+      <dd><%= @project.name %></dd>
 
-</dl>
+    </dl>
+  </div>
+  <div class="span8">
+    <h2>Project Tasks</h2>
+    <p><%= link_to "New Task", new_project_task_path(@project),class: "btn" %></p>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+    <% @project.tasks.each do |task| %>
+        <tr>
+          <td><%= task.name %></td>
+          <td><%= link_to 'Show', [task.project,task] %></td>
+          <td><%= link_to 'Edit', edit_project_task_path(task.project,task) %></td>
+          <td><%= link_to 'Destroy', [task.project,task], confirm: 'Are you sure?', method: :delete %></td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

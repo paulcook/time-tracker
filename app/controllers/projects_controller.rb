@@ -1,13 +1,17 @@
 class ProjectsController < ApplicationController
   
-  include CustomerConcerns
+  include AssociationLoaderConcern
   
   before_filter :load_customer
   
   # GET /projects
   # GET /projects.json
   def index
-    @projects = @customer.projects
+    if @customer
+      @projects = @customer.projects
+    else
+      @projects = Project.order("name asc")
+    end
 
     respond_to do |format|
       format.html # index.html.erb
