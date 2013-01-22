@@ -32,17 +32,16 @@ gem 'devise'
 
 gem 'bootstrap-generators', '~> 2.1'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :test, :development do
+  gem "minitest-rails"
+  gem "factory_girl_rails", "~> 4.0", :require=>false
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+group :test do
+  gem "minitest-rails-capybara"
+  gem "capybara-webkit"
+  gem "minitest-rails-shoulda"
+  gem "mocha", :require => false
+  gem "database_cleaner"
+  gem "launchy"
+end
