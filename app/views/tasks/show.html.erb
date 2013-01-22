@@ -23,7 +23,7 @@
   </div>
   <div class="span8">
     <h3> Task Times</h3>
-    <%= link_to new_task_time_path(@task), class: "btn btn-primary" do %>
+    <%= link_to task_timer_path(@task), class: "btn btn-primary",data: {toggle:"modal", target: "#timer-modal", keyboard: false, show: false, remote: task_timer_path(@task) } do %>
     <i class="icon-time"></i> Start Timer
     <% end %>
     <%= link_to new_task_time_path(@task), class: "btn" do %>

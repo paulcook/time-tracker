@@ -21,4 +21,13 @@ class TaskTime < ActiveRecord::Base
     end
     self.total_time = total_in_minutes
   end
+  
+  def update_time_from_string(time_str)
+    time_units = time_str.split(":")
+    self.hours = time_units[0].to_i
+    self.minutes = time_units[1].to_i
+    self.seconds = time_units[2].to_i
+    self.stopped_at = Time.now
+    self.save
+  end
 end

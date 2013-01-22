@@ -65,4 +65,10 @@ describe TaskTime do
     @task_time.total_time.must_equal 120
   end
   
+  it "should be able to udpate time from string of format 00:00:00" do
+    @task_time.update_time_from_string("01:01:00")
+    @task_time.persisted?.must_equal true
+    @task_time.total_time.must_equal 61
+  end
+  
 end

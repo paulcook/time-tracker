@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+//$('timer-modal').modal({ keyboard: false, show: false })
+$('#timer').stopwatch()

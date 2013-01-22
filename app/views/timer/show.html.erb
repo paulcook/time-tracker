@@ -1,0 +1,22 @@
+<div id="timer">00:00:00</div>
+<div class="btn-group">
+  <a href="#start-timer" id="start-timer" class="btn btn-success">Start</a>
+  <a href="#stop-timer" id="stop-timer" class="btn btn-warning">Stop</a>
+  <a href="#start-reset" id="reset-timer" class="btn btn-alert">Reset</a>
+</div>
+<script>
+$(document).ready(function(){
+  
+  $("#start-timer").click(function(e){
+    e.preventDefault()
+    $('#timer').stopwatch().stopwatch('start');
+  })
+  
+  $("#stop-timer").click(function(e){
+    e.preventDefault()
+    $('#timer').stopwatch().stopwatch('stop');
+    $.post('<%= task_stop_timer_path(@task,id: @task_time.id) %>', { time_string: $('#timer').html() } )
+  })
+  
+})
+</script>
