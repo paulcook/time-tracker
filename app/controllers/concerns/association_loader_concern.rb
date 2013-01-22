@@ -13,4 +13,11 @@ module AssociationLoaderConcern
       @project = Project.find(id)
     end
   end
+  
+  def load_task
+    if params[:task_id]
+      id = params[:task_id]
+      @task = Task.find(id)
+    end
+  end
 end

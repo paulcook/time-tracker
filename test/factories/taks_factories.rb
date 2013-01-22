@@ -4,6 +4,11 @@ FactoryGirl.define do
     project
   end
   
+  factory :task_time do
+    task
+    user
+  end
+  
   sequence :task_name do |n|
     "Task #{n}"
   end

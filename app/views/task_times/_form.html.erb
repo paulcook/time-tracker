@@ -1,0 +1,43 @@
+
+  <% if @task_time.errors.any? %>
+    <div class="alert alert-error">
+      <a class="close" data-dismiss="alert" href="#">×</a>
+      <h4 class="alert-heading"><%= pluralize(@task_time.errors.count, "error") %> prohibited this task_time from being saved:</h4>
+
+      <ul>
+      <% @task_time.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :task, :class => "control-label" %>
+    <div class="controls">
+      <%= @task %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_id, :class => "control-label" %>
+    <div class="controls">
+      <%= @user %>
+      <%= f.hidden_field :user_id %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :stopped_at, "Date:", :class => "control-label" %>
+    <div class="controls">
+      <%= f.datetime_select :stopped_at, :class => "input-xlarge", :ampm => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :total_time, :class => "control-label" %>
+    <div class="controls">
+      Hours: <%= f.number_field :hours, :class => "input-xsmall" %> Minutes <%= f.number_field :minutes, :class => "input-xsmall" %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+

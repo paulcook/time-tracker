@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <ul class="nav nav-list">
   <li class="nav-header">Customers</li>
   <li class="active"><%= link_to "View Customers", customers_path %></li>
@@ -13,3 +14,4 @@
   <li><%= link_to "Add Task for Projects", new_project_task_path(@project) %></li>
   <% end %>
 </ul>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="page-header">
+  <%= link_to task_times_path(@task), :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    Back
+  <% end %>
+  <h1>New Time for Task <%= @task.name %></h1>
+</div>
+
+<%= form_for(@task_time, :url=>task_times_path(@task), :html => { :class => "form-horizontal" }) do |f| %>
+  <%= render 'form',{f: f} %>
+<% end %>

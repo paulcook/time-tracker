@@ -1,0 +1,42 @@
+<div class="page-header">
+  <%= link_to new_task_time_path(@task), :class => 'btn btn-primary' do %>
+    <i class="icon-plus icon-white"></i>
+    New Task Time
+  <% end %>
+  <%= link_to project_task_path(@task.project, @task), :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    View Task
+  <% end %>
+  
+  <h1>Listing Times for Task <%= @task.name %></h1>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>User</th>
+      <th>Started at</th>
+      <th>Stopped at</th>
+      <th>Total time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @task_times.each do |task_time| %>
+    <tr>
+      <td><%= task_time.task %></td>
+      <td><%= task_time.user %></td>
+      <td><%= task_time.started_at %></td>
+      <td><%= task_time.stopped_at %></td>
+      <td><%= task_time.total_time %></td>
+      <td><%= link_to 'Show', task_time_path(task_time.task,task_time) %></td>
+      <td><%= link_to 'Edit', edit_task_time_path(task_time.task,task_time) %></td>
+      <td><%= link_to 'Destroy', task_time_path(task_time.task,task_time), confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

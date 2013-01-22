@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to task_times_path(@task), :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    Back
+  <% end %>
+  <%= link_to edit_task_time_path(@task,@task_time), :class => 'btn btn-primary' do %>
+    <i class="icon-pencil icon-white"></i>
+    Edit
+  <% end %>
+  <h1>Listing Time for Task <%= @task.name %></h1>
+</div>
+
+<dl>
+  <dt>Task:</dt>
+  <dd><%= @task_time.task %></dd>
+
+  <dt>User:</dt>
+  <dd><%= @task_time.user %></dd>
+
+  <dt>Started at:</dt>
+  <dd><%= @task_time.started_at %></dd>
+
+  <dt>Stopped at:</dt>
+  <dd><%= @task_time.stopped_at %></dd>
+
+  <dt>Total time in Minutes:</dt>
+  <dd><%= @task_time.total_time %></dd>
+
+</dl>

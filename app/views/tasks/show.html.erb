@@ -7,14 +7,52 @@
     <i class="icon-pencil icon-white"></i>
     Edit
   <% end %>
-  <h1>Listing tasks</h1>
+  <h1><small>Task</small> <%= @task %></h1>
 </div>
 
-<dl>
-  <dt>Project:</dt>
-  <dd><%= @task.project %></dd>
+<div class="row-fluid">
+  <div class="span4">
+    <dl>
+      <dt>Project:</dt>
+      <dd><%= @task.project %></dd>
 
-  <dt>Name:</dt>
-  <dd><%= @task.name %></dd>
+      <dt>Name:</dt>
+      <dd><%= @task.name %></dd>
 
-</dl>
+    </dl>
+  </div>
+  <div class="span8">
+    <h3> Task Times</h3>
+    <%= link_to new_task_time_path(@task), class: "btn btn-primary" do %>
+    <i class="icon-time"></i> Start Timer
+    <% end %>
+    <%= link_to new_task_time_path(@task), class: "btn" do %>
+    <i class="icon-plus"></i> Manual Time
+    <% end %>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Started at</th>
+          <th>Stopped at</th>
+          <th>Total time</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+    <% @task.task_times.each do |task_time| %>
+        <tr>
+          <td><%= task_time.user %></td>
+          <td><%= task_time.started_at %></td>
+          <td><%= task_time.stopped_at %></td>
+          <td><%= task_time.total_time %></td>
+          <td><%= link_to 'Edit', edit_task_time_path(task_time.task,task_time) %></td>
+          <td><%= link_to 'Destroy', task_time_path(task_time.task,task_time), confirm: 'Are you sure?', method: :delete %></td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

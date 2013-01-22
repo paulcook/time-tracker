@@ -1,0 +1,16 @@
+<div class="page-header">
+  <%= link_to task_times_path(@task), :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    Back
+  <% end %>
+  <%= link_to task_time_path(@task,@task_time), :class => 'btn btn-primary' do %>
+    <i class="icon-info-sign icon-white"></i>
+    Show
+  <% end %>
+  <h1>Editing task_time</h1>
+</div>
+
+<%= form_for(@task_time, :url=>task_time_path(@task,@task_time), :html => { :class => "form-horizontal" }) do |f| %>
+  <%= render 'form',{f: f} %>
+<% end %>
+

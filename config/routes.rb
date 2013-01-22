@@ -8,7 +8,9 @@ Tracker::Application.routes.draw do
     resources :tasks
   end
   
-  resources :tasks, only: [:index]
+  resources :tasks, only: [:index] do
+    resources :times, controller: "task_times"
+  end
   
   devise_for :users
 
