@@ -3,7 +3,10 @@
   <li class="active"><%= link_to "View Customers", customers_path %></li>
   <li><%= link_to "Add Customer", new_customer_path %></li>
   <li class="nav-header">Projects</li>
-  <li><a href="#">Link</a></li>
+  <li><%= link_to "View Projects" %></li>
+  <% if @customer and @customer.persisted? %>
+  <li><%= link_to "Add Project", new_customer_project_path(@customer) %></li>
+  <% end %>
   <li class="nav-header">Tasks</li>
   <li><a href="#">Link</a></li>
 </ul>

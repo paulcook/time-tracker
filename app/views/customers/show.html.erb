@@ -9,45 +9,52 @@
   <% end %>
   <h1>Listing customers</h1>
 </div>
+<div class="row-fluid">
+  <div class="span6">
+    <dl>
+      <dt>Name:</dt>
+      <dd><%= @customer.name %></dd>
 
-<dl>
-  <dt>Name:</dt>
-  <dd><%= @customer.name %></dd>
+      <dt>Address1:</dt>
+      <dd><%= @customer.address1 %></dd>
 
-  <dt>Address1:</dt>
-  <dd><%= @customer.address1 %></dd>
+      <dt>Address2:</dt>
+      <dd><%= @customer.address2 %></dd>
 
-  <dt>Address2:</dt>
-  <dd><%= @customer.address2 %></dd>
+      <dt>Address3:</dt>
+      <dd><%= @customer.address3 %></dd>
 
-  <dt>Address3:</dt>
-  <dd><%= @customer.address3 %></dd>
+      <dt>City:</dt>
+      <dd><%= @customer.city %></dd>
 
-  <dt>City:</dt>
-  <dd><%= @customer.city %></dd>
+      <dt>State:</dt>
+      <dd><%= @customer.state %></dd>
 
-  <dt>State:</dt>
-  <dd><%= @customer.state %></dd>
+      <dt>Zipcode:</dt>
+      <dd><%= @customer.zipcode %></dd>
 
-  <dt>Zipcode:</dt>
-  <dd><%= @customer.zipcode %></dd>
+      <dt>Phone1:</dt>
+      <dd><%= @customer.phone1 %></dd>
 
-  <dt>Phone1:</dt>
-  <dd><%= @customer.phone1 %></dd>
+      <dt>Phone2:</dt>
+      <dd><%= @customer.phone2 %></dd>
 
-  <dt>Phone2:</dt>
-  <dd><%= @customer.phone2 %></dd>
+      <dt>Fax1:</dt>
+      <dd><%= @customer.fax1 %></dd>
 
-  <dt>Fax1:</dt>
-  <dd><%= @customer.fax1 %></dd>
+      <dt>Fax2:</dt>
+      <dd><%= @customer.fax2 %></dd>
 
-  <dt>Fax2:</dt>
-  <dd><%= @customer.fax2 %></dd>
+      <dt>Email:</dt>
+      <dd><%= @customer.email %></dd>
 
-  <dt>Email:</dt>
-  <dd><%= @customer.email %></dd>
+      <dt>Website:</dt>
+      <dd><%= @customer.website %></dd>
 
-  <dt>Website:</dt>
-  <dd><%= @customer.website %></dd>
-
-</dl>
+    </dl>
+  </div>
+  <div class="span6">
+    <h2>Customer Projects</h2>
+    <p><%= link_to "Add Project", new_customer_project_path(@customer), class: "btn" %></p>
+  </div>
+</div>
