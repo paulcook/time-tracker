@@ -17,6 +17,14 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  
+  gem 'anjlab-bootstrap-rails', '>= 2.1', :require => 'bootstrap-rails'
+  gem 'font-awesome-sass-rails'
+end
+
+group :production do
+  gem "execjs", "1.4.0"
+  gem "therubyracer", "0.10.2"
 end
 
 gem 'jquery-rails'
