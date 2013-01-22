@@ -2,7 +2,7 @@ require "minitest_helper"
 
 describe Customer do
   before do
-    @customer = Customer.new
+    @customer = Customer.new(name: "Company A")
   end
 
   it "must be valid" do

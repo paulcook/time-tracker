@@ -3,7 +3,11 @@ require "minitest_helper"
 describe CustomersController do
 
   before do
+    @user = FactoryGirl.create(:user)
+    
     @customer = FactoryGirl.create(:customer)
+    
+    sign_in @user
   end
 
   it "must get index" do
