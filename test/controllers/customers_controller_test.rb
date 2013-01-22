@@ -3,7 +3,7 @@ require "minitest_helper"
 describe CustomersController do
 
   before do
-    @customer = customers(:one)
+    @customer = FactoryGirl.create(:customer)
   end
 
   it "must get index" do
@@ -19,7 +19,7 @@ describe CustomersController do
 
   it "must create customer" do
     assert_difference('Customer.count') do
-      post :create, customer: {  }
+      post :create, customer: { name: "New Company" }
     end
 
     assert_redirected_to customer_path(assigns(:customer))
@@ -36,7 +36,7 @@ describe CustomersController do
   end
 
   it "must update customer" do
-    put :update, id: @customer, customer: {  }
+    put :update, id: @customer, customer: { address1: "New Address", address3: "This is a note", zipcode: "12345" }
     assert_redirected_to customer_path(assigns(:customer))
   end
 
